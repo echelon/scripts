@@ -1,0 +1,2 @@
+Symlinks for installed scripts go here.
+Use install.py in the main script directory to install/uninstall scripts.

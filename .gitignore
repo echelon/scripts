@@ -1,0 +1,32 @@
+#### Project Specific Ignore ####
+
+# Installation symlink directory
+installed/*
+
+#### Generic Ignore ####
+
+# Generated files
+*~
+*.bak
+*.[oa]
+*.so
+*.os
+*.pyc
+
+# Debugging
+core
+
+# Generic compilation
+a.out
+
+# SQLite databases
+*.sqlite
+*.sqlite-*
+
+# SCons Database
+.sconsign.dblite
+
+# SWIG Generated Wrappers
+*_wrap.cc
+*_wrap.h
+
