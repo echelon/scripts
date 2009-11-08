@@ -27,6 +27,7 @@
 
 import gconf
 import libxml2
+import os.path
 
 class Font(object):
 	"""Represents a single font setting for a single GConf key."""
@@ -211,7 +212,9 @@ class GnomeFonts(object):
 
 if __name__ == '__main__':
 	gnomeFonts = GnomeFonts()
-	configs = parseXmlConfig('./resize-fonts.xml')
+	dirname = os.path.dirname(os.path.realpath(__file__))
+	print dirname
+	configs = parseXmlConfig(os.path.abspath(dirname+'/resize-fonts.xml'))
 
 	for x in configs:
 		print x
