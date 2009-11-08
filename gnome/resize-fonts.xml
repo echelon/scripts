@@ -1,0 +1,28 @@
+<fonts>
+	<keys>
+		<!-- TODO: Keys. Allow user to specify gconf keys here instead of 
+			hardcoding them into Python. -->
+	</keys>
+	<modes>
+
+		<mode key="small" comment="Smaller fonts">
+			<default>10</default>
+			<document>10</document>
+			<monospace>10</monospace>
+			<avant></avant>
+			<gedit>10</gedit>
+			<nautilus-desktop>10</nautilus-desktop>
+			<metacity />
+		</mode>
+
+		<mode key="large" comment="Larger fonts">
+			<default>12</default>
+			<document>12</document>
+			<monospace>12</monospace>
+			<avant></avant>
+			<gedit>12</gedit>
+			<nautilus-desktop>12</nautilus-desktop>
+		</mode>
+
+	</modes>
+</fonts>
