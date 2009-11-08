@@ -1,0 +1,104 @@
+<!-- XML File for retheme.py -->
+<retheme>
+	<!-- 
+		These are the gnome configuration editor keys. 
+		Lists must be specified as type=list. Only one val currently supported.
+		Default type is string. 
+	-->
+	<keys>
+		<key name="wallpaper"		var="/desktop/gnome/background/picture_filename" />
+		<key name="skydome"			var="/apps/compiz/plugins/cube/screen0/options/skydome_image" />
+		<key name="cubecap_top"		var="/apps/compiz/plugins/cubecaps/screen0/options/top_images" type="list" />
+		<key name="cubecap_bottom"	var="/apps/compiz/plugins/cubecaps/screen0/options/bottom_images" type="list" />
+		<key name="panel_bgcolor"	var="/apps/panel/toplevels/top_panel_screen0/background/color" />
+		<key name="panel_bgalpha"	var="/apps/panel/toplevels/top_panel_screen0/background/opacity" type="int" />
+		<key name="awn_bgcolor1"	var="/apps/avant-window-navigator/bar/glass_step_1" />
+		<key name="awn_bgcolor2"	var="/apps/avant-window-navigator/bar/glass_step_2" />
+		<key name="gtk_theme"		var="/desktop/gnome/interface/gtk_theme" />
+		<key name="icon_theme"		var="/desktop/gnome/interface/icon_theme" />
+		<key name="gnome_terminal_bgcolor" var="/apps/gnome-terminal/profiles/Default/background_color" />
+		<key name="gnome_terminal_fgcolor" var="/apps/gnome-terminal/profiles/Default/foreground_color" />
+		<key name="gnome_terminal_bgalpha" var="/apps/gnome-terminal/profiles/Default/background_darkness" type="float" />
+	</keys>
+	<!-- 
+		These are the themes themselves. We'll cycle through them. 
+		The keys are as named in the section above. Any key may be set.
+
+			#['globe-panorama.png',		'bucolicbeauty.png',	'linux-black.png'],
+		*	['city_at_dusk.jpg',		'carina5.png',			'linux-black.png', 	'#ffffff',	30575],
+			['atmosphere.jpg',			'death_valley_sky.png',	'stars2.png', 		'#ffffff',	30575],
+			['space-02.jpg',			'carina5.png',			'linux-black.png',	'#000000',	30575],
+			['grain-silo.jpg',			'waterscape.jpg',		'linux-black.png',	'#000000',	30575],
+		*	['industrial.jpg',			'circuit-white.jpg',	'linux-white.png',	'#ffffff',	0],
+		*	['blue-fractal.jpg',		'circuit-black.jpg',	'linux-black.png',	'#000000',	30575],
+	-->
+	<themes>
+		<!-- Industrial -->
+		<theme>
+			<set key="gtk_theme">Clearlooks</set>
+			<!--<set key="gtk_theme">Nodoka-Silver</set>-->
+			<set key="icon_theme">Human</set>
+			<!--<set key="icon_theme">Echo</set>-->
+			<set key="wallpaper">/home/brandon/Images/wallpaper/industrial.jpg</set>
+			<set key="skydome">/home/brandon/Images/system/skydome/circuit-white.jpg</set>
+			<set key="cubecap_top">/home/brandon/Images/system/cubecap/linux-white.png</set>
+			<set key="cubecap_bottom">/home/brandon/Images/system/cubecap/linux-white.png</set>
+			<set key="panel_bgcolor">#000000</set>
+			<set key="panel_bgalpha">30575</set>
+			<set key="awn_bgcolor1">888888C8</set>
+			<set key="awn_bgcolor2">555555BE</set>
+			<set key="gnome_terminal_bgcolor">#000000</set>
+			<set key="gnome_terminal_fgcolor">#FFFFFF</set>
+			<set key="gnome_terminal_bgalpha">0.69411766529083252</set>
+		</theme>
+
+		<!-- Lake at Dusk -->
+		<theme>
+			<set key="gtk_theme">MurrinaNightOrange</set>
+			<set key="icon_theme">black-white_2-Gloss</set>
+			<set key="wallpaper">/home/brandon/Images/wallpaper/perfectnight.jpg</set>
+			<set key="skydome">/home/brandon/Images/system/skydome/carina5.png</set>
+			<set key="cubecap_top">/home/brandon/Images/system/cubecap/linux-black.png</set>
+			<set key="cubecap_bottom">/home/brandon/Images/system/cubecap/linux-black.png</set>
+			<set key="panel_bgcolor">#292017</set>
+			<set key="panel_bgalpha">30575</set>
+			<set key="awn_bgcolor1">454545C8</set>
+			<set key="awn_bgcolor2">010101BE</set>
+			<set key="gnome_terminal_bgcolor">#000000</set>
+			<set key="gnome_terminal_fgcolor">#FFFFFF</set>
+			<set key="gnome_terminal_bgalpha">0.69411766529083252</set>
+		</theme>
+
+		<!-- Blue Fractal -->
+		<theme>
+			<set key="gtk_theme">Leech</set>
+			<set key="icon_theme">black-white_2-Gloss</set>
+			<set key="wallpaper">/home/brandon/Images/wallpaper/blue-fractal.jpg</set>
+			<set key="skydome">/home/brandon/Images/system/skydome/circuit-black.jpg</set>
+			<set key="cubecap_top">/home/brandon/Images/system/cubecap/linux-black.png</set>
+			<set key="cubecap_bottom">/home/brandon/Images/system/cubecap/linux-black.png</set>
+			<set key="panel_bgcolor">#000000</set>
+			<set key="panel_bgalpha">30575</set>
+			<set key="awn_bgcolor1">454545C8</set>
+			<set key="awn_bgcolor2">010101BE</set>
+			<set key="gnome_terminal_bgcolor">#000000</set>
+			<set key="gnome_terminal_fgcolor">#FFFFFF</set>
+			<set key="gnome_terminal_bgalpha">0.69411766529083252</set>
+		</theme>
+
+
+		<!-- Silo -->
+		<!--<theme>
+			<set key="gtk_theme">Clearlooks</set>
+			<set key="wallpaper">/home/brandon/Images/wallpaper/grain-silo.jpg</set>
+			<set key="skydome">/home/brandon/Images/system/skydome/waterscape.jpg</set>
+			<set key="cubecap_top">/home/brandon/Images/system/cubecap/linux-black.png</set>
+			<set key="cubecap_bottom">/home/brandon/Images/system/cubecap/linux-black.png</set>
+			<set key="panel_bgcolor">#000000</set>
+			<set key="panel_bgalpha">30575</set>
+			<set key="awn_bgcolor1">888888C8</set>
+			<set key="awn_bgcolor2">555555BE</set>
+		</theme>-->
+
+	</themes>
+</retheme>
