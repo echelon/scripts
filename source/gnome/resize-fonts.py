@@ -80,6 +80,9 @@ class Config(object):
 		ret += ">"
 		return ret
 
+	def __repr__(self):
+		return "<Config \"%s\">" % self.description
+
 
 def parseXmlConfig(filename):
 	"""Parse the XML config file and return Config objects for each set found"""
@@ -143,7 +146,6 @@ class GnomeFonts(object):
 		"""Set the font for the corresponding key."""
 		if not font:
 			return False
-		print font
 		if not font.face:
 			self.setFontSize(key, font.size)
 			return
@@ -158,7 +160,6 @@ class GnomeFonts(object):
 		font = self.getFont(key)
 		if not font:
 			return False
-		print font
 		font.size = size
 		self.conf.set_string(cls.KEYS[key], font.getName())
 
@@ -210,18 +211,17 @@ class GnomeFonts(object):
 
 		self.setConfig(setConfig)
 
-if __name__ == '__main__':
+		for config in configSet:
+			if setConfig.key == config.key:
+				print "* %s" % repr(config)
+			else:
+				print "  %s" % repr(config)
+
+def main():
 	gnomeFonts = GnomeFonts()
 	dirname = os.path.dirname(os.path.realpath(__file__))
-	print dirname
-	configs = parseXmlConfig(os.path.abspath(dirname+'/resize-fonts.xml'))
-
-	for x in configs:
-		print x
-
+	configs = parseXmlConfig(os.path.abspath(dirname+'/resize-fonts.xml')) #TODO
 	gnomeFonts.toggleSetting(configs)
 
-	#gnomeFonts.setFontSize('default', 10)
-
-
+if __name__ == '__main__': main()
 
