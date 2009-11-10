@@ -217,10 +217,40 @@ class GnomeFonts(object):
 			else:
 				print "  %s" % repr(config)
 
+def getConfigFile():
+	"""Returns the abspath of the first found config file, or False.
+	Looks in ~, ~/Sys/config, and the cwd.
+	The files it searches for are "resize-fonts.xml" or 
+	".resize-fonts.xml", all in that order."""
+	homedir = os.path.expanduser('~')
+	cwd = os.path.dirname(os.path.realpath(__file__))
+	searchDirs = [
+		homedir,
+		homedir + '/Sys/config',
+		cwd
+	]
+	searchFiles = [
+		'resize-fonts.xml',
+		'.resize-fonts.xml'
+	]
+	for dir in searchDirs:
+		for file in searchFiles:
+			tryFile = dir + '/' + file
+			if os.path.exists(tryFile):
+				return tryFile
+	return False
+
 def main():
 	gnomeFonts = GnomeFonts()
 	dirname = os.path.dirname(os.path.realpath(__file__))
-	configs = parseXmlConfig(os.path.abspath(dirname+'/resize-fonts.xml')) #TODO
+
+	configFile = getConfigFile()
+	if not configFile:
+		print "Error: Could not find config file."
+		return False
+
+	print "Using config file '%s'." % configFile
+	configs = parseXmlConfig(configFile)
 	gnomeFonts.toggleSetting(configs)
 
 if __name__ == '__main__': main()
